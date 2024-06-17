@@ -216,10 +216,16 @@ class Concierge{
 
   protected function build_msnode($objectarr){
     $objecttype = '';
+    // While and manual cursor used in order to remember cursory position within array
+    // Also sets $key and $value for current values at cursor position in array
+    $arrayCursor = 0;  // Initialize the cursor
 
-	// While(each()) used in order to remember cursory position within array
-	// Also sets $key and $value for current values at cursor position in array
-    while(list($key, $value) = foreach($objectarr)) {
+    // Convert the array keys to an array to keep track of the current position
+    $keys = array_keys($objectarr);
+
+    while ($arrayCursor < count($keys)) {
+		$key = $keys[$arrayCursor];
+		$value = $objectarr[$key];
 
 		// First do some quick validation
 		if(is_array($value) && sizeof($value) == 0) {
@@ -347,6 +353,7 @@ class Concierge{
 				}
 			$objecttype.= '>'.$value.'</mem:Value></mem:KeyValueOfstringanyType>';
 		}
+	    $arrayCursor++;  // Move to the next element
 	}
 	return $objecttype;
 }
