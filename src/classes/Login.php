@@ -7,6 +7,7 @@
 include_once('Concierge.php');
 
 class Login extends Concierge{
+  private $api;
   
   public function __construct(){
    

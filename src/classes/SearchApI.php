@@ -8,6 +8,7 @@
 include_once('Concierge.php');
 
 class SearchAPI extends Concierge{
+	private $api;
 
 public function __construct(){
 	// Create object of the concierge class

@@ -11,6 +11,7 @@ include_once($filedir.'lib/Config.php');
 include_once($filedir.'lib/Curl.php');
 
 class Concierge{
+  private $crypt;
 
   function __construct(){
     $this->crypt = new CryptoManager();

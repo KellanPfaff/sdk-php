@@ -6,6 +6,7 @@
 include_once('Concierge.php');
 
 class Portal extends Concierge{
+  private $api;
   
   public function __construct(){
    

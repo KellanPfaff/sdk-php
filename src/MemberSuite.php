@@ -21,6 +21,20 @@ class MemberSuite{
   var $query;
   var $startrecord;
   var $maxrecord;
+  var $login;
+  var $search;
+  var $data;
+  var $metadata;
+  var $job;
+  var $diagn;
+  var $documnt;
+  var $event;
+  var $finance;
+  var $fund;
+  var $integration;
+  var $membership;
+  var $order;
+  var $portal;
   
   function __construct(){
     
@@ -36,6 +50,20 @@ class MemberSuite{
     $this->query = null;
     $this->startrecord = null;
     $this->maxrecord = null;
+    $this->login = null;
+    $this->search = null;
+    $this->data = null;
+    $this->metadata = null;
+    $this->job = null;
+    $this->diagn = null;
+    $this->documnt = null;
+    $this->event = null;
+    $this->finance = null;
+    $this->fund = null;
+    $this->integration = null;
+    $this->membership = null;
+    $this->order = null;
+    $this->portal = null;
     
     // Create login object
     $this->login = new Login();
@@ -476,9 +504,9 @@ class MemberSuite{
                                      $this->associationId,
                                      $this->secretaccessId,
                                      $searchToUse,
-                                     $fieldToUseAsObjectIdentifier,
                                      $startRecord,
-                                     $maximumNumberOfRecordsToReturn
+                                     $maximumNumberOfRecordsToReturn,
+                                     $fieldToUseAsObjectIdentifier
                                      );
     
     return $response;

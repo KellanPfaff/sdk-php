@@ -6,7 +6,7 @@
 include_once('Concierge.php');
 
 class Job extends Concierge{
-  
+  private $api;
   
   public function __construct(){
    

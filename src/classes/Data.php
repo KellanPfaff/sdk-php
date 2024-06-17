@@ -7,6 +7,8 @@
 include_once('Concierge.php');
 
 class Data extends Concierge{
+  private $api;
+
   private $debug = false;
   
   public function __construct(){
@@ -707,7 +709,7 @@ class Data extends Concierge{
     
   }
   
-  public function GetObjectsBySearchRequest($accesskey,$associationid,$secreteaccessid,$searchToUse,$fieldToUseAsObjectIdentifier='ID',$startRecord,$maximumNumberOfRecordsToReturn){
+  public function GetObjectsBySearchRequest($accesskey,$associationid,$secreteaccessid,$searchToUse,$startRecord,$maximumNumberOfRecordsToReturn,$fieldToUseAsObjectIdentifier='ID'){
     // Get file content
      $filecontent = $this->api->GetFormat();
      if($filecontent=='Error')
